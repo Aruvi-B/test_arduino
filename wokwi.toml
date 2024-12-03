@@ -1,0 +1,4 @@
+[[peripherals]]
+id = "led_red"       
+type = "led"         
+pin = 12             
