@@ -1,22 +1,20 @@
 {
-  "name": "Arduino DevContainer with PlatformIO, Wokwi, and C/C++",
-  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
-  "extensions": [
-    "platformio.platformio-ide",
-    "ms-iot.vscode-arduino",
-    "lintangwisesa.arduino",
-    "Wokwi.wokwi-vscode",
-    "ms-vscode.cpptools"
-  ],
-  "settings": {
-    "arduino.path": "/home/codespace/.platformio/penv/bin",
-    "platformio.home.enabled": true,
-    "arduino.additionalUrls": "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
-  },
-  "postCreateCommand": "bash -c 'sudo apt-get update && sudo apt-get install -y python3-pip && python3 -m pip install platformio && pio update'",
-  "remoteUser": "codespace",
-  "features": {
-    "vscode:remote": "true"
-  },
-  "dockerFile": "Dockerfile"
+  "name": "ESP32 Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.9",
+  "postCreateCommand": "pip install platformio && arduino-cli core install esp32:esp32",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "platformio.platformio-ide",
+        "vsciot-vscode.vscode-arduino",
+        "ms-vscode.cpptools",
+        "wokwi.wokwi-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.colorTheme": "Visual Studio Dark",
+        "editor.formatOnSave": true
+      }
+    }
+  }
 }
