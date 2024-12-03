@@ -24,7 +24,7 @@ void loop() {
 
     Serial.print("Distance: ");
     Serial.print(distance);
-    Serial.print(" cm\n ");
+    Serial.print(" cm\r ");
     if (distance < 10) {
     digitalWrite(LED1, HIGH);
     digitalWrite(LED2, HIGH);
