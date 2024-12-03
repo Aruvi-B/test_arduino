@@ -13,13 +13,10 @@
     "platformio.home.enabled": true,
     "arduino.additionalUrls": "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
   },
-  "postCreateCommand": [
-    "sudo apt-get update && sudo apt-get install -y python3-pip",
-    "python3 -m pip install --upgrade platformio",
-    "pio update"
-  ],
+  "postCreateCommand": "bash -c 'sudo apt-get update && sudo apt-get install -y python3-pip && python3 -m pip install platformio && pio update'",
   "remoteUser": "codespace",
   "features": {
     "vscode:remote": "true"
-  }
+  },
+  "dockerFile": "Dockerfile"
 }
