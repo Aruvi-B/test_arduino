@@ -1,0 +1,19 @@
+{
+  "name": "Arduino DevContainer",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+  "extensions": [
+    "platformio.platformio-ide",
+    "ms-iot.vscode-arduino",
+    "lintangwisesa.arduino"
+  ],
+  "settings": {
+    "arduino.path": "/home/codespace/.platformio/penv/bin",
+    "platformio.home.enabled": true,
+    "arduino.additionalUrls": "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+  },
+  "postCreateCommand": "pio update",
+  "remoteUser": "codespace",
+  "features": {
+    "vscode:remote": "true"
+  }
+}
