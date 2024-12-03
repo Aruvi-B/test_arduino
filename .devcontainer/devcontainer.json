@@ -1,17 +1,23 @@
 {
-  "name": "Arduino DevContainer",
+  "name": "Arduino DevContainer with PlatformIO, Wokwi, and C/C++",
   "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
   "extensions": [
     "platformio.platformio-ide",
     "ms-iot.vscode-arduino",
-    "lintangwisesa.arduino"
+    "lintangwisesa.arduino",
+    "Wokwi.wokwi-vscode",
+    "ms-vscode.cpptools"
   ],
   "settings": {
     "arduino.path": "/home/codespace/.platformio/penv/bin",
     "platformio.home.enabled": true,
     "arduino.additionalUrls": "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
   },
-  "postCreateCommand": "pio update",
+  "postCreateCommand": [
+    "sudo apt-get update && sudo apt-get install -y python3-pip",
+    "python3 -m pip install --upgrade platformio",
+    "pio update"
+  ],
   "remoteUser": "codespace",
   "features": {
     "vscode:remote": "true"
